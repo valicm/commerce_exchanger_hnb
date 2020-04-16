@@ -1,0 +1,27 @@
+<?php
+
+/**
+ * @file
+ * Install file for commerce_exchanger_hnb.
+ */
+
+/**
+ * Implements hook_requirements().
+ */
+function commerce_exchanger_hnb_requirements($phase) {
+  $requirements = [];
+
+  if ($phase == 'install') {
+    $currency_hrk = \Drupal::entityTypeManager()->getStorage('commerce_currency')->load('HRK');
+
+    if (empty($currency_hrk)) {
+      $requirements['commerce_exchanger_hnb'] = [
+        'title' => t('HRK currency'),
+        'description' => t('Commerce Exchanger HNB requires that you have HRK currency enabled.'),
+        'severity' => REQUIREMENT_ERROR,
+      ];
+    }
+  }
+
+  return $requirements;
+}
