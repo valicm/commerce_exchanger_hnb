@@ -12,9 +12,9 @@ function commerce_exchanger_hnb_requirements($phase) {
   $requirements = [];
 
   if ($phase == 'install') {
-    $currency_hrk = \Drupal::entityTypeManager()->getStorage('commerce_currency')->load('HRK');
+    $currency = \Drupal::entityTypeManager()->getStorage('commerce_currency')->load('HRK');
 
-    if (empty($currency_hrk)) {
+    if ($currency === NULL) {
       $requirements['commerce_exchanger_hnb'] = [
         'title' => t('HRK currency'),
         'description' => t('Commerce Exchanger HNB requires that you have HRK currency enabled.'),

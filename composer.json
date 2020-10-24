@@ -5,7 +5,7 @@
     "homepage": "https://www.drupal.org/project/commerce_exchanger_hnb",
     "license": "GPL-2.0+",
     "require": {
-        "drupal/commerce_exchanger": "^1.0"
+        "drupal/commerce_exchanger": "^1.2"
     }
     ,
     "require-dev": {

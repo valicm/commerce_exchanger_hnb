@@ -14,7 +14,8 @@ use Drupal\Component\Serialization\Json;
  *   display_label = "Croatian National Bank",
  *   historical_rates = TRUE,
  *   base_currency = "HRK",
- *   refresh_once = TRUE
+ *   refresh_once = TRUE,
+ *   transform_rates=TRUE,
  * )
  */
 class HnbExchanger extends ExchangerProviderRemoteBase {
